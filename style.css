@@ -1,0 +1,50 @@
+.contenedor1{
+    height: 200px;
+    background-color: rgb(143, 68, 68);
+    font-size: 25px;
+    
+}
+
+.contenedor1{
+    font-family: "Georgia", "Times New Roman", serif;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.contenedor2{
+   height: 600px;
+   background-color: rgb(159, 155, 155);
+   display: flex; 
+   flex-direction: row;
+   width: 100%;
+  overflow: hidden;
+}
+
+.contenedor2 img{
+    width: 550px;
+    height: 500px;
+    float:left; 
+    margin-right: 100px; 
+}
+
+.contenedor2 .d{
+    text-align: center;
+    overflow: hidden;
+}
+
+.contenedor2 .d{
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 20px;
+    color:white;
+    width: 50%;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .contenedor2{
+        flex-direction: column;
+       
+     }
+  }
