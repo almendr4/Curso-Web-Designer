@@ -1,7 +1,133 @@
+*{
+    margin: 0;
+}
+
+
+header{
+  height: 60px;
+  background-color:antiquewhite;
+  position:sticky
+  top 0;
+   
+}
+
+header nav ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 60px;
+    align-items: center;
+}
+
+header nav ul li{
+    margin: 0 70px;
+    list-style: none;
+}
+
+
+header nav ul li a{
+    text-decoration: none;
+    color:brown;
+    font-size: 20px;
+}
+
+
+.logo{
+    display: inline-block;
+    color:black;
+    font-size: 20px;
+    text-decoration: none;
+}
+               
+.nav{
+    width: 100%;
+    height: 100%; 
+    position: fixed;
+    background-color:rgb(159, 155, 155);
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .5s ease-out;
+}
+
+.menu a{
+    display: block;
+    padding: 30px;
+    color: var(--black)
+}
+
+.menu a:hover{    /*esto es para cuando el mouse se posicione sobre los items del menu*/
+  background-color:var(--black);
+}    
+
+.inicio{
+    cursor:pointer;
+    float: right;
+   padding: 20px 10px;
+}
+
+.inicio-line{
+    background: var(--white);
+    display: block;
+    height: 2px;
+    position:relative;
+    width: 24px;
+}
+
+.inicio-line::before,
+.inicio-line::after
+{
+ background: var(--white);
+ content: '___';
+ display: block;
+ height: 100%;
+ position:absolute;
+ transition: all .2s ease-out;
+ width: 100%;
+}
+
+.inicio-line::before
+{
+    top: 5px;
+}
+
+.inicio-line::after
+{
+    top: -5px;
+}
+
+.side-menu{
+    display: none;
+}
+
+
+.side-menu:checked ~ nav
+{
+    max-height: 100%;
+}
+
+.side-menu:checked ~ .inicio .inicio-line 
+{
+    background: transparent;
+}
+
+.side-menu:checked ~ .inicio .inicio-line::before 
+{
+    transform: rotate(-45deg);
+    top:0;
+}
+
+.side-menu:checked ~ .inicio .inicio-line::after 
+{
+    transform: rotate(45deg);
+    top:0;
+}
+
+
 .contenedor1{
     height: 200px;
     background-color: rgb(143, 68, 68);
     font-size: 25px;
+    padding: top 40px;;
     
 }
 
@@ -23,6 +149,7 @@
 }
 
 .contenedor2 img{
+    padding: 45px;
     width: 550px;
     height: 500px;
     float:left; 
@@ -32,6 +159,7 @@
 .contenedor2 .d{
     text-align: center;
     overflow: hidden;
+    padding: 100px;
 }
 
 .contenedor2 .d{
@@ -41,10 +169,33 @@
     width: 50%;
 }
 
+.contenedor2 .d h2{
+    padding-bottom: 30px;
+    text-align: center;
+}
+.contenedor2 .d .p{
+text-align: justify;
+line-height: 30px;
+}
 
-@media only screen and (max-width: 600px) {
-    .contenedor2{
-        flex-direction: column;
-       
-     }
-  }
+
+footer{
+    text-align: center;
+    padding: 9px;
+    background-color:rgb(143, 68, 68); 
+    color:black
+}
+
+footer p a{
+    color:black
+}
+
+            
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+    .menu {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+}
